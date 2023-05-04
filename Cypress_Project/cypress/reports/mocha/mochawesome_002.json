@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-05-04T09:36:08.787Z",
+    "end": "2023-05-04T09:36:39.017Z",
+    "duration": 30230,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2b4ab298-08fe-4752-b405-528ee320de67",
+      "title": "",
+      "fullFile": "cypress/e2e/myntra.cy.js",
+      "file": "cypress/e2e/myntra.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "137e192f-1b4e-47e6-bef0-a55d9e79ddae",
+          "title": "Myntra",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should search for product",
+              "fullTitle": "Myntra should search for product",
+              "timedOut": null,
+              "duration": 28125,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Enter the product code\ncy.get('input[placeholder=\"Search for products, brands and more\"]').type('shirt');\n// Click on Search button\ncy.get('a[class=\"desktop-submit\"]').click({\n  force: true\n});\n//Select first product on Product listing page\ncy.get('li[class=\"product-base\"]').eq(0).find('a').invoke('removeAttr', 'target').click({\n  force: true\n});\n//Select a size of the product\ncy.get('div[class=\"size-buttons-tipAndBtnContainer\"]').eq(0).trigger(\"click\");\ncy.wait(1000);\n// Click on Add to Cart button\ncy.get('span[class=\"myntraweb-sprite pdp-whiteBag sprites-whiteBag pdp-flex pdp-center\"]').click({\n  force: true\n});\n//Click on Go to Bag\ncy.get('a[class=\"pdp-goToCart pdp-add-to-bag pdp-button pdp-flex pdp-center \"]').click({\n  force: true\n});\n//Click on Place Order\ncy.get('button[class=\"css-etguer\"]').click({\n  force: true\n});\ncy.url().should('include', '/checkout/cart');",
+              "err": {},
+              "uuid": "4654ddf7-369f-49dc-9d01-ee8b2d4d6f76",
+              "parentUUID": "137e192f-1b4e-47e6-bef0-a55d9e79ddae",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4654ddf7-369f-49dc-9d01-ee8b2d4d6f76"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 28125,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
